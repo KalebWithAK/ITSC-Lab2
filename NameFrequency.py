@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 class NameFrequency:
 
     def __init__(self):
+        # repeat 'pd.DataFrame()'
         self.data_frame = pd.DataFrame()
         self.data_set = pd.DataFrame()
         self.plot_group1 = pd.DataFrame()
         self.plot_group2 = pd.DataFrame()
+
         self.result = []
 
     # Load CSV file
@@ -21,8 +23,8 @@ class NameFrequency:
         data_frame = dict(data[column_name].str.split(" ", n=1, expand=True))
         self.data_frame = data_frame
         if isinstance(self.data_frame, pd.DataFrame):
-            return True
-        return False
+            return False
+        return True
 
     # making separate data set column from specific data frame
     def selectingColumn(self, column_name, column_index):
